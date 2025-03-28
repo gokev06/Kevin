@@ -1,18 +1,19 @@
-<div class="sidebar">
+<div class="sidebar" [class.collapsed]="isCollapsed">
     <div class="sidebarsuper">
         <div class="perfil">
             <img src="../../../assets/kevin.jpg" alt="">
             <h3>Developer Web</h3>
             <h4>{{ animatedText }}</h4>
+            <button class="toggle-btn" (click)="toggleSidebar()"><i class='bx bx-left-arrow-alt'></i></button>
         </div>
         <ul>
             <li routerLink=""> 
-                <i class='bx bxs-food-menu' id="logo    " ></i>
+                <i class='bx bxs-food-menu' id="logo"></i>
                 <a>Blog</a>
             </li>
             <li routerLink="/About"> 
                 <i class='bx bxs-user' id="logo"></i>
-                <a  >About Me</a>
+                <a>About Me</a>
             </li>
             <li>
                 <i class='bx bx-code-alt' id="logo"></i>
@@ -23,12 +24,12 @@
                 <a RouterLink="">Work</a>
             </li>
             <li>
-                <i class='bx bxs-contact' id="logo" ></i>
+                <i class='bx bxs-contact' id="logo"></i>
                 <a RouterLink="">Contact</a>
             </li>
             <li class="logos">
                 <i class='bx bxl-github' id="logo"></i>
-                <i class='bx bxl-linkedin-square' id="logo" ></i>
+                <i class='bx bxl-linkedin-square' id="logo"></i>
                 <i class='bx bxl-gmail' id="logo"></i>
             </li>
         </ul>

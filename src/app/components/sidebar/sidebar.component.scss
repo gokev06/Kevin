@@ -1,43 +1,46 @@
-.sidebar{
+.sidebar {
     background-color: #2E2D2D;
-    border-right: 3px solid white ;
+    border-right: 3px solid white;
     width: 250px;
     display: flex;
     height: 100vh;
     flex-direction: column;
-    position: relative; /* Permite que los hijos con position: absolute se posicionen dentro */
+    position: relative;
+    transition: width 0.3s ease;
 }
 
-.perfil{
+.perfil {
     display: flex;
     flex-direction: column;
     background-color: #232323;
     width: 100%;
-    height: 200px;
     justify-content: center;
     align-items: center;
     border-bottom: 3px solid white;
     color: white;
+    position: relative;
 }
 
-.perfil img{
+.perfil img {
     width: 100px;
     height: 100px;
     border-radius: 20px;
     margin-bottom: 10px;
+    margin-top: 15px;
 }
 
-.perfil h3{
+.perfil h3 {
     margin-bottom: 10px;
 }
 
-.perfil h4{
-    text-shadow: 0px 0px 10px #00FFFF; /* Brillo en el texto */
+.perfil h4 {
+    text-shadow: 0px 0px 10px #00FFFF;
     animation: blink 0.7s steps(2, start) infinite;
-    min-height: 20px; /* Asegura un espacio fijo para el texto */
+    min-height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 /* Oculta el texto sin afectar el diseño cuando está vacío */
@@ -46,90 +49,166 @@
     visibility: hidden;
 }
 
-ul{
-    list-style: none; /* Quita los estilos de la lista */
+ul {
+    list-style: none;
     color: white;
     text-decoration: none;
-
 }
 
-.active{
-    text-shadow: 0px 0px 10px #00FFFF; /* Brillo en el texto */
+.active {
+    text-shadow: 0px 0px 10px #00FFFF;
 }
 
-ul li{
+ul li {
     width: 100%;
-    height: 60px;
+    height: 55px;
     display: flex;
     border-bottom: 3px solid white;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
 
-ul li #logo{
-    font-size: 35px;
+ul li #logo {
+    font-size: 30px;
 }
 
-li a{
+li a {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
 }
 
-li:hover{
+li:hover {
     cursor: pointer;
-    text-shadow: 0px 0px 10px #00FFFF; /* Brillo en el texto */
+    text-shadow: 0px 0px 10px #00FFFF;
     background-color: #222222;
-    
 }
 
-.logos:hover{
+.logos:hover {
     text-shadow: none;
     background-color: #2E2D2D;
-    cursor:auto
+    cursor: auto;
 }
 
-ul .logos{
+ul .logos {
     border-bottom: none;
     justify-content: space-around;
 }
 
-ul li #logo:hover{
-    text-shadow: 0px 0px 10px #00FFFF; /* Brillo en el texto */
+ul li #logo:hover {
+    text-shadow: 0px 0px 10px #00FFFF;
 }
 
-.sidebarinfe{
+.sidebarinfe {
     color: white;
     display: flex;
-     width: 100%;
-     height: 50px;
-     justify-content: space-between;
-     align-items: center;
-     padding: 0 20px;
-     position: absolute; /* Se coloca en relación con .sidebar */
-     bottom: 0; /* Fijado en la parte inferior */
-     left: 0;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
-.sidebarinfe a{
+.sidebarinfe a {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
 }
 
-
-.sidebarinfe img{
+.sidebarinfe img {
     width: 30px;
     height: 30px;
 }
 
-.sidebarinfe:hover{
+.sidebarinfe:hover {
     cursor: pointer;
-    text-shadow: 0px 0px 10px #00FFFF; /* Brillo en el texto */
+    text-shadow: 0px 0px 10px #00FFFF;
     background-color: #222222;
-    
 }
+
+/* Botón de colapsar */
+.toggle-btn {
+    position: absolute;
+    right: -25px;
+    top: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    background-color: #524F4F;
+    border: 1px solid white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+/* Sidebar colapsado */
+.sidebar.collapsed {
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+/* Ocultar textos y mantener solo los iconos */
+.sidebar.collapsed .perfil h3,
+.sidebar.collapsed .perfil h4,
+.sidebar.collapsed ul li a,
+.sidebar.collapsed .sidebarinfe a {
+    display: none;
+}
+
+/* Ajustar el tamaño de los íconos cuando está colapsado */
+.sidebar.collapsed ul li #logo {
+    font-size: 24px; /* Reduce el tamaño de los iconos */
+}
+
+/* Centrar los íconos en la versión colapsada */
+.sidebar.collapsed ul li {
+    justify-content: center; /* Centra los íconos en el sidebar */
+    width: 100px;
+}
+
+/* Ajustar el botón de colapsar */
+.sidebar.collapsed .toggle-btn {
+    right: -25px; /* Ajusta la posición */
+    transform: rotate(180deg);
+}
+
+/* Ajustar la sección inferior (Translate) */
+.sidebar.collapsed .sidebarinfe {
+    justify-content: center;
+}
+
+/* Reducir el tamaño de la imagen del perfil cuando está colapsado */
+.sidebar.collapsed .perfil img {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+/* Asegurar que los iconos de redes sociales sean visibles */
+.sidebar.collapsed .logos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar.collapsed .logos{
+    display: none;
+}
+
+.sidebar.collapsed .perfil{
+    background-color: transparent;
+}
+
+ 

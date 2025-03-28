@@ -40,4 +40,9 @@ export class SidebarComponent implements OnInit {
       }
     }, 150); // Controla la velocidad de aparición y desaparición
   }
+  isCollapsed = false;
+
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }
