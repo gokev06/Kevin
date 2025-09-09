@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss'
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.scss'
 })
-export class BlogComponent implements OnInit {
+export class AboutComponent  implements OnInit{
+
+  info = false; 
+
   icons: { class: string; top: number; left: number; duration: string; transform: string;    animation: string  }[] = [];
 
   ngOnInit() {
@@ -73,6 +76,5 @@ export class BlogComponent implements OnInit {
         }
       }, 150); // Controla la velocidad de aparición y desaparición
     }
-
   
 }

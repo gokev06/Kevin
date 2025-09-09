@@ -1,0 +1,83 @@
+main{
+    background-color: #3A3A3A;
+    display: flex;
+}
+.content {
+    position: relative;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+  }
+  
+  .floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .floating-icons i {
+    position: absolute;
+    font-size: 50px;
+    color: #1E1E1E;
+  }
+  
+  /* Animaciones de movimiento */
+  
+  /* 1. Flotante suave */
+  @keyframes floatAnimation {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(20px); }
+  }
+  .float {
+    animation: floatAnimation linear infinite;
+  }
+  
+  /* 2. Zigzag */
+  @keyframes zigzagAnimation {
+    0% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(-15px) translateY(-15px); }
+    50% { transform: translateX(15px) translateY(15px); }
+    75% { transform: translateX(-15px) translateY(-15px); }
+    100% { transform: translateX(0) translateY(0); }
+  }
+  .zigzag {
+    animation: zigzagAnimation linear infinite;
+  }
+  
+  /* 3. Rotación aleatoria */
+  @keyframes rotateAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .rotate {
+    animation: rotateAnimation linear infinite;
+  }
+  
+  /* 4. Movimiento circular */
+  @keyframes circularAnimation {
+    0% { transform: rotate(0deg) translate(30px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(30px) rotate(-360deg); }
+  }
+
+  .contentabout{
+    z-index: 1000;
+    padding: 50px;
+  }
+
+  .contentabout h1{
+    text-shadow: 0px 0px 10px #0ff;
+    margin-bottom: 20px;
+  }
+  
+.contentabout ul{
+  list-style: none;
+}
+
+  .contentabout li{
+    cursor: pointer;
+    
+  }

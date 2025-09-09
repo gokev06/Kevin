@@ -1,0 +1,33 @@
+<main>
+    <app-sidebar></app-sidebar>
+    <div class="content">
+        <div class="floating-icons">
+            <i *ngFor="let icon of icons"
+                class="{{ icon.class }}"
+                [ngStyle]="{'top': icon.top + '%', 'left': icon.left + '%', 'animation-duration': icon.duration, 'transform': icon.transform}"
+                [class.float]="icon.animation === 'float'"
+                [class.zigzag]="icon.animation === 'zigzag'"
+                [class.rotate]="icon.animation === 'rotate'"
+                [class.circular]="icon.animation === 'circular'">
+            </i>
+        </div>   
+        <div class="contentabout">
+            <h1>Work Experience</h1>
+            <ul>
+                <li onclick="info == true">Red de Servicios del Quindio SAS</li>
+            </ul>
+        </div> 
+        <div class="contentabout">
+            <h1>Estudies</h1>
+            <ul>
+                <li onclick="info == true">Academic Bachelor</li>
+                <li onclick="info == true">Software Analysis and Development Technician</li>
+                <li onclick="info == true">Technologist in software analysis and development</li>
+                <li onclick="info == true">Software Engineering - In Progress</li>
+            </ul>
+        </div> 
+    </div>
+    
+    </main>
+    
+    

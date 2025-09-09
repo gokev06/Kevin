@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  words: string[] = ["Back-End", "Front-End"];
+  words: string[] = ["Back-End", "Front-End", "Full-Stack"];
   animatedText: string = "";
   wordIndex: number = 0;
   charIndex: number = 0;
